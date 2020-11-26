@@ -3,20 +3,43 @@ import {View, Text, StyleSheet} from 'react-native';
 
 import DeviceWidth from '../../constants/DeviceLayout';
 
+const width = DeviceWidth.window.width;
+
 /* STYLES */
 const styles = StyleSheet.create({
-	mainContainer: {},
+  mainContainer: {
+    width: width,
+    height: 55,
+    backgroundColor: 'white',
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  backArrowContainer: {
+    width: '20%',
+    alignItems: 'center',
+  },
+  viewName: {
+    width: '60%',
+    alignItems: 'center',
+  },
+  rightContainer: {
+    width: '20%',
+    alignItems: 'center',
+  },
 });
 
-const width = DeviceWidth.window.width;
-const height = DeviceWidth.window.height;
-
 function Header(props) {
-  const {viewName} = props;
+  const {viewName, elevation} = props;
 
   return (
-    <View>
-      <Text>{viewName}</Text>
+    <View style={[styles.mainContainer, {elevation: elevation || 0}]}>
+      <View style={styles.backArrowContainer}>
+        <View />
+      </View>
+      <View style={styles.viewName}>
+        <Text>{viewName}</Text>
+      </View>
+      <View style={styles.rightContainer} />
     </View>
   );
 }

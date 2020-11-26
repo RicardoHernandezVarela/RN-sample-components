@@ -1,5 +1,4 @@
 import {Navigation} from 'react-native-navigation';
-import App from './App';
 import Home from './screens/Home';
 
 Navigation.registerComponent('Home', () => Home);
