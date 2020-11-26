@@ -1,7 +1,12 @@
 import {Navigation} from 'react-native-navigation';
-import Home from './screens/Home';
 
+/* COMPONENTS IMPORTS */
+import Home from './screens/Home';
+import ProgressBarView from './screens/ProgressBarView';
+
+/* COMPONENTS REGISTRY */
 Navigation.registerComponent('Home', () => Home);
+Navigation.registerComponent('ProgressBarView', () => ProgressBarView);
 
 Navigation.setDefaultOptions({
   statusBar: {

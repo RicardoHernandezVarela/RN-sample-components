@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
+import {Navigation} from 'react-native-navigation';
 
 import Header from '../../components/Header';
 import DeviceLayout from '../../constants/DeviceLayout';
@@ -75,6 +76,20 @@ class Home extends React.Component {
     };
   }
 
+  goToView = (view) => {
+    console.log('goToView', `${view}View`);
+    const toView = `${view}View`;
+
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: toView,
+        passProps: {
+          viewName: view,
+        },
+      },
+    });
+  };
+
   render() {
     const {viewName, sampleComponents} = this.state;
 
@@ -94,7 +109,7 @@ class Home extends React.Component {
             <FlatList
               data={sampleComponents}
               renderItem={({item, index}) => (
-                <TouchableOpacity>
+                <TouchableOpacity onPress={() => this.goToView(item.viewName)}>
                   <Item item={{...item, index}} />
                 </TouchableOpacity>
               )}
