@@ -5,6 +5,7 @@ import Header from '../../components/Header';
 import ProgressBar from '../../components/ProgressBar';
 
 import DeviceLayout from '../../constants/DeviceLayout';
+import Colors from '../../constants/Colors';
 
 const width = DeviceLayout.window.width;
 const height = DeviceLayout.window.height;
@@ -15,6 +16,10 @@ const styles = StyleSheet.create({
     width: width,
     height: height,
     backgroundColor: 'white',
+  },
+  progressBarComponent: {
+    width: width,
+    height: height - 55,
   },
 });
 
@@ -30,7 +35,16 @@ class ProgressBarView extends React.Component {
     return (
       <View style={styles.mainContainer}>
         <Header viewName={viewName} elevation={5} />
-        <ProgressBar />
+
+        {/* ProgressBar COMPONENT */}
+        <View style={styles.progressBarComponent}>
+          <ProgressBar
+            barWidth={200}
+            barHeight={25}
+            percentage={95}
+            colors={['white', Colors.cerulean]}
+          />
+        </View>
       </View>
     );
   }
