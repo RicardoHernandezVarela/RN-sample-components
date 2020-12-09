@@ -63,9 +63,7 @@ function ProgressBar(props) {
 
       {/* PERCENTAGE VALUE */}
       <View style={styles.percentageContainer}>
-        <Text style={styles.percentage}>{`${Math.round(
-          progress * 100,
-        )}%`}</Text>
+        <Text style={styles.percentage}>{`${progress * 100}%`}</Text>
       </View>
     </View>
   );
