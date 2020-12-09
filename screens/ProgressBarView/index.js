@@ -24,6 +24,10 @@ const styles = StyleSheet.create({
     height: height,
     backgroundColor: 'white',
   },
+  contentContainer: {
+    width: width,
+    height: height - 55,
+  },
   /* TITLE STYLES */
   title: {
     width: width,
@@ -66,6 +70,19 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     paddingTop: 5,
   },
+  /* NOTIFICATION STYLES */
+  notification: {
+    width: width,
+    marginTop: 15,
+    marginBottom: 0,
+  },
+  notificationText: {
+    fontSize: 14,
+    fontWeight: 'bold',
+    color: 'gray',
+    textAlign: 'center',
+    paddingTop: 5,
+  },
 });
 
 class ProgressBarView extends React.Component {
@@ -87,7 +104,7 @@ class ProgressBarView extends React.Component {
         <Header viewName={viewName} elevation={5} />
 
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
-          <View>
+          <View style={styles.contentContainer}>
             {/* TITLE */}
             <View style={styles.title}>
               <Text style={styles.titleText}>
@@ -100,21 +117,37 @@ class ProgressBarView extends React.Component {
               <TextInput
                 value={inputValue}
                 onChangeText={(text) => this.setState({inputValue: text})}
-                onSubmitEditing={() =>
-                  this.setState({progress: parseFloat(inputValue, 10)})
-                }
+                onSubmitEditing={() => {
+                  const value = parseFloat(inputValue, 10);
+
+                  if (value < 0 || value > 100) {
+                    console.log('is fucking bigger or equal than 0', value);
+                    this.setState({progress: null});
+                  } else {
+                    this.setState({progress: value});
+                  }
+                }}
                 keyboardType={'numeric'}
                 style={styles.progressTextInput}
               />
               <Text style={styles.progressLabel}>{'Enter a number'}</Text>
             </View>
 
+            {/* NOTIFICATION */}
+            {progress === null && (
+              <View style={styles.notification}>
+                <Text style={styles.notificationText}>
+                  {'Please enter a value between 0 and 100'}
+                </Text>
+              </View>
+            )}
+
             {/* ProgressBar COMPONENT */}
             <View style={styles.progressBarComponent}>
               <ProgressBar
                 barWidth={200}
                 barHeight={25}
-                percentage={progress}
+                percentage={progress ? progress : 0}
                 colors={['white', Colors.cerulean]}
               />
             </View>
