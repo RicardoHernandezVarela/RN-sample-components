@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, TextInput, StyleSheet} from 'react-native';
+import {
+  View,
+  Text,
+  TextInput,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from 'react-native';
 
 import Header from '../../components/Header';
 import ProgressBar from '../../components/ProgressBar';
@@ -79,35 +86,40 @@ class ProgressBarView extends React.Component {
         {/*HEADER */}
         <Header viewName={viewName} elevation={5} />
 
-        {/* TITLE */}
-        <View style={styles.title}>
-          <Text style={styles.titleText}>
-            {'Testing the ProgressBar component'}
-          </Text>
-        </View>
+        <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+          <View>
+            {/* TITLE */}
+            <View style={styles.title}>
+              <Text style={styles.titleText}>
+                {'Testing the ProgressBar component'}
+              </Text>
+            </View>
 
-        {/* PROGRESS CONTROL */}
-        <View style={styles.progressInput}>
-          <TextInput
-            value={inputValue}
-            onChangeText={(text) => this.setState({inputValue: text})}
-            onSubmitEditing={() =>
-              this.setState({progress: parseFloat(inputValue, 10)})
-            }
-            style={styles.progressTextInput}
-          />
-          <Text style={styles.progressLabel}>{'Enter a number'}</Text>
-        </View>
+            {/* PROGRESS CONTROL */}
+            <View style={styles.progressInput}>
+              <TextInput
+                value={inputValue}
+                onChangeText={(text) => this.setState({inputValue: text})}
+                onSubmitEditing={() =>
+                  this.setState({progress: parseFloat(inputValue, 10)})
+                }
+                keyboardType={'numeric'}
+                style={styles.progressTextInput}
+              />
+              <Text style={styles.progressLabel}>{'Enter a number'}</Text>
+            </View>
 
-        {/* ProgressBar COMPONENT */}
-        <View style={styles.progressBarComponent}>
-          <ProgressBar
-            barWidth={200}
-            barHeight={25}
-            percentage={progress}
-            colors={['white', Colors.cerulean]}
-          />
-        </View>
+            {/* ProgressBar COMPONENT */}
+            <View style={styles.progressBarComponent}>
+              <ProgressBar
+                barWidth={200}
+                barHeight={25}
+                percentage={progress}
+                colors={['white', Colors.cerulean]}
+              />
+            </View>
+          </View>
+        </TouchableWithoutFeedback>
       </View>
     );
   }
