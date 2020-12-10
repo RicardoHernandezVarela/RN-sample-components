@@ -1,15 +1,23 @@
 import React from 'react';
-import {View, Text, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  FlatList,
+  TouchableOpacity,
+  Image,
+} from 'react-native';
 import {Navigation} from 'react-native-navigation';
 
 import Header from '../../components/Header';
 import DeviceLayout from '../../constants/DeviceLayout';
+import Colors from '../../constants/Colors';
 
 import componentsList from './ComponentsList';
 
 const width = DeviceLayout.window.width;
 const height = DeviceLayout.window.height;
-const titleContainerHeight = 120;
+const titleContainerHeight = 200;
 const sampleComponentHeight = 60;
 
 /* STYLES */
@@ -32,8 +40,27 @@ const styles = StyleSheet.create({
     height: titleContainerHeight,
     alignItems: 'center',
     justifyContent: 'center',
-    borderBottomWidth: 0.5,
-    borderColor: 'gray',
+    marginTop: 30,
+  },
+  imgContainer: {
+    width: 150,
+    height: 150,
+    backgroundColor: 'white',
+    borderWidth: 0.5,
+    borderColor: Colors.silver,
+    borderRadius: 360,
+    elevation: 5,
+    alignSelf: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  img: {
+    width: '95%',
+    height: '95%',
+    resizeMode: 'cover',
+    borderWidth: 0.5,
+    borderColor: Colors.silver,
+    borderRadius: 360,
   },
   title: {
     fontSize: 18,
@@ -45,7 +72,7 @@ const styles = StyleSheet.create({
   /* COMPONENTS LIST STYLES */
   componentsListContainer: {
     width: width,
-    height: height - 55 - titleContainerHeight,
+    height: height - titleContainerHeight,
     backgroundColor: 'white',
   },
   componentsList: {
@@ -56,16 +83,20 @@ const styles = StyleSheet.create({
     width: width,
     height: sampleComponentHeight,
     backgroundColor: 'white',
-    borderBottomWidth: 0.5,
     alignItems: 'center',
     justifyContent: 'center',
+    elevation: 5,
+    marginTop: 5,
+    marginBottom: 5,
   },
   sampleComponentName: {
-    fontSize: 14,
+    fontSize: 16,
     color: 'gray',
     textAlign: 'center',
   },
 });
+
+const img = 'https://i.ibb.co/16ysGpw/dropss.jpg';
 
 class Home extends React.Component {
   constructor(props) {
@@ -95,12 +126,14 @@ class Home extends React.Component {
 
     return (
       <View style={styles.mainContainer}>
-        <Header viewName={viewName} elevation={5} />
-
         {/* CONTENT */}
         <View style={styles.content}>
           {/* TITLE */}
           <View style={styles.titleContainer}>
+            <View style={styles.imgContainer}>
+              <Image style={styles.img} source={{uri: img}} />
+            </View>
+
             <Text style={styles.title}>{`${viewName} List`}</Text>
           </View>
 
