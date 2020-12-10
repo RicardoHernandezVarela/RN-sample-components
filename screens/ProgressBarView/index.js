@@ -10,7 +10,7 @@ import {
 
 import Header from '../../components/Header';
 import ProgressBar from '../../components/ProgressBar';
-
+import ViewTitle from '../../components/ViewTitle';
 import DeviceLayout from '../../constants/DeviceLayout';
 import Colors from '../../constants/Colors';
 
@@ -28,19 +28,7 @@ const styles = StyleSheet.create({
     width: width,
     height: height - 55,
   },
-  /* TITLE STYLES */
-  title: {
-    width: width,
-    marginTop: 20,
-    marginBottom: 10,
-    alignItems: 'center',
-  },
-  titleText: {
-    fontSize: 25,
-    fontWeight: 'bold',
-    color: 'gray',
-    textAlign: 'center',
-  },
+  /* progressBarComponent STYLES */
   progressBarComponent: {
     width: width,
     height: 100,
@@ -106,11 +94,7 @@ class ProgressBarView extends React.Component {
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
           <View style={styles.contentContainer}>
             {/* TITLE */}
-            <View style={styles.title}>
-              <Text style={styles.titleText}>
-                {'Testing the ProgressBar component'}
-              </Text>
-            </View>
+            <ViewTitle title={'Testing the ProgressBar component'} />
 
             {/* PROGRESS CONTROL */}
             <View style={styles.progressInput}>
@@ -121,7 +105,6 @@ class ProgressBarView extends React.Component {
                   const value = parseFloat(inputValue, 10);
 
                   if (value < 0 || value > 100) {
-                    console.log('is fucking bigger or equal than 0', value);
                     this.setState({progress: null});
                   } else {
                     this.setState({progress: value});

@@ -22,6 +22,11 @@ const styles = StyleSheet.create({
     width: '60%',
     alignItems: 'center',
   },
+  viewNameText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: 'gray',
+  },
   rightContainer: {
     width: '20%',
     alignItems: 'center',
@@ -37,7 +42,7 @@ function Header(props) {
         <View />
       </View>
       <View style={styles.viewName}>
-        <Text>{viewName}</Text>
+        <Text style={styles.viewNameText}>{viewName}</Text>
       </View>
       <View style={styles.rightContainer} />
     </View>
