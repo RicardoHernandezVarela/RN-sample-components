@@ -97,33 +97,22 @@ class ProgressBarView extends React.Component {
             <ViewTitle title={'Testing the ProgressBar component'} />
 
             {/* PROGRESS CONTROL */}
-            <View style={styles.progressInput}>
-              <TextInput
-                value={inputValue}
-                onChangeText={(text) => this.setState({inputValue: text})}
-                onSubmitEditing={() => {
-                  const value = parseFloat(inputValue, 10);
+            <ProgressControl
+              inputValue={inputValue}
+              onChangeText={(text) => this.setState({inputValue: text})}
+              onSubmitEditing={() => {
+                const value = parseFloat(inputValue, 10);
 
-                  if (value < 0 || value > 100) {
-                    this.setState({progress: null});
-                  } else {
-                    this.setState({progress: value});
-                  }
-                }}
-                keyboardType={'numeric'}
-                style={styles.progressTextInput}
-              />
-              <Text style={styles.progressLabel}>{'Enter a number'}</Text>
-            </View>
+                if (value < 0 || value > 100) {
+                  this.setState({progress: null});
+                } else {
+                  this.setState({progress: value});
+                }
+              }}
+            />
 
             {/* NOTIFICATION */}
-            {progress === null && (
-              <View style={styles.notification}>
-                <Text style={styles.notificationText}>
-                  {'Please enter a value between 0 and 100'}
-                </Text>
-              </View>
-            )}
+            {progress === null && <Notification />}
 
             {/* ProgressBar COMPONENT */}
             <View style={styles.progressBarComponent}>
@@ -140,5 +129,32 @@ class ProgressBarView extends React.Component {
     );
   }
 }
+
+const ProgressControl = ({inputValue, onChangeText, onSubmitEditing}) => {
+  return (
+    <View style={styles.progressInput}>
+      <TextInput
+        value={inputValue}
+        onChangeText={(text) => onChangeText(text)}
+        onSubmitEditing={() => onSubmitEditing()}
+        keyboardType={'numeric'}
+        style={styles.progressTextInput}
+      />
+      <Text style={styles.progressLabel}>{'Enter a number'}</Text>
+    </View>
+  );
+};
+
+const Notification = () => {
+  return (
+    <View style={styles.notification}>
+      <Text style={styles.notificationText}>
+        {'Please enter a value between 0 and 100'}
+      </Text>
+    </View>
+  );
+};
+
+export {ProgressControl, Notification};
 
 export default ProgressBarView;
