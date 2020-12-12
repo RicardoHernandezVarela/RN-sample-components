@@ -74,7 +74,14 @@ class ProgressBarSemiCircleView extends React.Component {
             {progress === null && <Notification />}
 
             <View style={styles.progressBarSemiCircle}>
-              <ProgressBarSemiCircle progress={progress} />
+              <ProgressBarSemiCircle
+                radius={150}
+                progressBarWidth={10}
+                progress={progress}
+                barColor={Colors.midnightGreen}
+                backgroundColor={Colors.platinum}
+                innerColor={'white'}
+              />
             </View>
           </View>
         </TouchableWithoutFeedback>

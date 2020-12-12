@@ -45,7 +45,14 @@ const styles = StyleSheet.create({
 });
 
 function ProgressBarSemiCircle(props) {
-  const {radius, progressBarWidth, progress} = props;
+  const {
+    radius,
+    progressBarWidth,
+    progress,
+    barColor,
+    backgroundColor,
+    innerColor,
+  } = props;
 
   const realProgressBarWidth = progressBarWidth || 10;
   const realRadius = radius || 150;
@@ -63,19 +70,19 @@ function ProgressBarSemiCircle(props) {
       height: realRadius,
       borderTopLeftRadius: realRadius,
       borderTopRightRadius: realRadius,
-      backgroundColor: Colors.aquamarine,
+      backgroundColor: backgroundColor || Colors.aquamarine,
     },
     innerCirlce: {
       width: innerRadius * 2,
       height: innerRadius,
       borderTopLeftRadius: innerRadius,
       borderTopRightRadius: innerRadius,
-      backgroundColor: 'white',
+      backgroundColor: innerColor || 'white',
     },
     movingCircle: {
       width: realRadius * 2,
       height: realRadius,
-      backgroundColor: Colors.cerulean,
+      backgroundColor: barColor || Colors.cerulean,
       borderBottomLeftRadius: realRadius,
       borderBottomRightRadius: realRadius,
       transform: [
