@@ -5,6 +5,9 @@ const componentsList = [
   {
     viewName: 'ProgressBarSemiCircle',
   },
+  {
+    viewName: 'CustomSwitch',
+  },
 ];
 
 export default componentsList;

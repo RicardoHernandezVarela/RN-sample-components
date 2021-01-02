@@ -4,6 +4,7 @@ import {Navigation} from 'react-native-navigation';
 import Home from './screens/Home';
 import ProgressBarView from './screens/ProgressBarView';
 import ProgressBarSemiCircleView from './screens/ProgressBarSemiCircleView';
+import CustomSwitchView from './screens/CustomSwitchView';
 
 /* COMPONENTS REGISTRY */
 Navigation.registerComponent('Home', () => Home);
@@ -12,6 +13,8 @@ Navigation.registerComponent(
   'ProgressBarSemiCircleView',
   () => ProgressBarSemiCircleView,
 );
+
+Navigation.registerComponent('CustomSwitchView', () => CustomSwitchView);
 
 Navigation.setDefaultOptions({
   statusBar: {
