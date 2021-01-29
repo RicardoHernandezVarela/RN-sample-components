@@ -7,6 +7,7 @@ const Colors = {
   persianGreen: '#25A18E',
   gray: '#8F8F8F',
   silver: '#C2C2C2',
+  redNcs: '#BA1231',
 };
 
 export default Colors;

@@ -73,7 +73,7 @@ class CustomSwitchView extends React.Component {
             <CustomSwitch
               width={90}
               height={40}
-              trackColor={{true: Colors.eagleGreen, false: Colors.cerulean}}
+              trackColor={{true: Colors.eagleGreen, false: Colors.redNcs}}
               thumbImage={{
                 true: {uri: 'https://i.ibb.co/CHZzfQP/lesath-launcher.png'},
                 false: {uri: 'https://i.ibb.co/16ysGpw/dropss.jpg'},

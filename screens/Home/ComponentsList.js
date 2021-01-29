@@ -8,6 +8,9 @@ const componentsList = [
   {
     viewName: 'CustomSwitch',
   },
+  {
+    viewName: 'ViewPager',
+  },
 ];
 
 export default componentsList;
