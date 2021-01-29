@@ -3,7 +3,6 @@ import {View, Text, StyleSheet} from 'react-native';
 import ViewPager from '@react-native-community/viewpager';
 
 import Header from '../../components/Header';
-import CustomSwitch from '../../components/CustomSwitch';
 import ViewTitle from '../../components/ViewTitle';
 import TabsMenu from '../../components/TabsMenu';
 

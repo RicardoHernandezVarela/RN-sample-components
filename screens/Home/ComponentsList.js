@@ -11,6 +11,9 @@ const componentsList = [
   {
     viewName: 'ViewPager',
   },
+  {
+    viewName: 'HorizontalGallery',
+  },
 ];
 
 export default componentsList;

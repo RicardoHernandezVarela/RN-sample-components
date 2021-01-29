@@ -55,8 +55,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   img: {
-    width: '95%',
-    height: '95%',
+    width: '100%',
+    height: '100%',
     resizeMode: 'cover',
     borderWidth: 0.5,
     borderColor: Colors.silver,
@@ -96,7 +96,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const img = 'https://i.ibb.co/16ysGpw/dropss.jpg';
+const img = 'https://rickvareladev.web.app/static/media/rvlogo.5ddf8975.png';
 
 class Home extends React.Component {
   constructor(props) {
