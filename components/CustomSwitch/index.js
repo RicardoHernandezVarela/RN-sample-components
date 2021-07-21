@@ -82,7 +82,10 @@ function CustomSwitch(props) {
 
   return (
     <View style={styles.mainContainer}>
-      <View style={[styles.track, trackStyles]}>
+      <TouchableOpacity
+        style={[styles.track, trackStyles]}
+        onPress={() => onValueChange()}
+        activeOpacity={0.9}>
         <TouchableOpacity
           style={[styles.thumb, thumbStyles, thumbPosition]}
           onPress={() => onValueChange()}
@@ -94,7 +97,7 @@ function CustomSwitch(props) {
             />
           )}
         </TouchableOpacity>
-      </View>
+      </TouchableOpacity>
     </View>
   );
 }
