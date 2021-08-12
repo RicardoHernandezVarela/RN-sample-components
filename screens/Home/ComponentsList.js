@@ -14,6 +14,9 @@ const componentsList = [
   {
     viewName: 'HorizontalGallery',
   },
+  {
+    viewName: 'Icon',
+  },
 ];
 
 export default componentsList;

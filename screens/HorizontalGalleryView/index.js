@@ -125,7 +125,7 @@ class HorizontalGallery extends React.Component {
         <View style={styles.content}>
           {/* TITLE */}
           <ViewTitle title={'Testing the HorizontalView component'} />
-
+          
           {/* GALLERY */}
           <ScrollView
             ref={this.gallery}

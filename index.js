@@ -7,6 +7,7 @@ import ProgressBarSemiCircleView from './screens/ProgressBarSemiCircleView';
 import CustomSwitchView from './screens/CustomSwitchView';
 import ViewPager from './screens/ViewPager';
 import HorizontalGalleryView from './screens/HorizontalGalleryView';
+import IconView from './screens/IconView';
 
 /* COMPONENTS REGISTRY */
 Navigation.registerComponent('Home', () => Home);
@@ -24,6 +25,8 @@ Navigation.registerComponent(
   'HorizontalGalleryView',
   () => HorizontalGalleryView,
 );
+
+Navigation.registerComponent('IconView', () => IconView);
 
 Navigation.setDefaultOptions({
   statusBar: {
