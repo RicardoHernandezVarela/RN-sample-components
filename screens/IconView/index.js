@@ -29,6 +29,12 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginTop: 50,
   },
+  iconType: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: Colors.cerulean,
+    marginTop: 10,
+  },
 });
 
 class IconView extends React.Component {
@@ -50,14 +56,24 @@ class IconView extends React.Component {
           {/* TITLE */}
           <ViewTitle title={'Testing the Icon component'} />
 
-          {/* ICON */}
+          {/* TOP ICON */}
           <View style={styles.iconContainer}>
             <Icon
               name={'options'}
-              onPress={() => console.log('Icon Pressed')}
+              onPress={() => console.log('Top Icon Pressed')}
               border
               elevation
             />
+            <Text style={styles.iconType}>{'Border and elevation'}</Text>
+          </View>
+
+          {/* BOTTOM ICON */}
+          <View style={styles.iconContainer}>
+            <Icon
+              name={'options'}
+              onPress={() => console.log('Bottom Icon Pressed')}
+            />
+            <Text style={styles.iconType}>{'No border, No elevation'}</Text>
           </View>
         </View>
       </View>
