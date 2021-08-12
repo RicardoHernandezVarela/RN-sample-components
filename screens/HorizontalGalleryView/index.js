@@ -114,18 +114,18 @@ class HorizontalGallery extends React.Component {
 
   render() {
     const {imgs, imgSelected} = this.state;
-    const {viewName} = this.props;
+    const {viewName, componentId} = this.props;
 
     return (
       <View style={styles.mainContainer}>
         {/*HEADER */}
-        <Header viewName={viewName} elevation={5} />
+        <Header viewName={viewName} elevation={5} componentId={componentId} />
 
         {/* CONTENT */}
         <View style={styles.content}>
           {/* TITLE */}
           <ViewTitle title={'Testing the HorizontalView component'} />
-          
+
           {/* GALLERY */}
           <ScrollView
             ref={this.gallery}

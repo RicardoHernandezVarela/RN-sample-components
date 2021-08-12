@@ -1,6 +1,8 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import {Navigation} from 'react-native-navigation';
 
+import Icon from '../Icon';
 import DeviceWidth from '../../constants/DeviceLayout';
 
 const width = DeviceWidth.window.width;
@@ -34,12 +36,21 @@ const styles = StyleSheet.create({
 });
 
 function Header(props) {
-  const {viewName, elevation} = props;
+  const {viewName, elevation, componentId} = props;
+
+  /* GO BACK */
+  const goBack = () => {
+    Navigation.pop(componentId, {
+      component: {
+        name: `${viewName}View`,
+      },
+    });
+  };
 
   return (
     <View style={[styles.mainContainer, {elevation: elevation || 0}]}>
       <View style={styles.backArrowContainer}>
-        <View />
+        <Icon name={'back_arrow'} onPress={() => goBack()} />
       </View>
       <View style={styles.viewName}>
         <Text style={styles.viewNameText}>{viewName}</Text>

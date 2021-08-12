@@ -44,11 +44,11 @@ class ProgressBarSemiCircleView extends React.Component {
 
   render() {
     const {inputValue, progress} = this.state;
-    const {viewName} = this.props;
+    const {viewName, componentId} = this.props;
 
     return (
       <View style={styles.mainContainer}>
-        <Header viewName={viewName} elevation={5} />
+        <Header viewName={viewName} elevation={5} componentId={componentId} />
 
         <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
           <View style={styles.contentContainer}>

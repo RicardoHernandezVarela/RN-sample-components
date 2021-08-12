@@ -116,6 +116,7 @@ class Home extends React.Component {
         name: toView,
         passProps: {
           viewName: view,
+          componentId: this.props.componentId,
         },
       },
     });

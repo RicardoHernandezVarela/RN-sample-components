@@ -51,7 +51,7 @@ class CustomSwitchView extends React.Component {
 
   render() {
     const {switchValue} = this.state;
-    const {viewName} = this.props;
+    const {viewName, componentId} = this.props;
 
     /* FOR DARKMODE TEST */
     const backgroundColor = switchValue
@@ -61,7 +61,7 @@ class CustomSwitchView extends React.Component {
     return (
       <View style={styles.mainContainer}>
         {/*HEADER */}
-        <Header viewName={viewName} elevation={5} />
+        <Header viewName={viewName} elevation={5} componentId={componentId} />
 
         {/* CONTENT */}
         <View style={styles.content}>

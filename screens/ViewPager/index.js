@@ -79,12 +79,12 @@ class ViewPagerView extends React.Component {
 
   render() {
     const {optionSelected} = this.state;
-    const {viewName} = this.props;
+    const {viewName, componentId} = this.props;
 
     return (
       <View style={styles.mainContainer}>
         {/*HEADER */}
-        <Header viewName={viewName} elevation={5} />
+        <Header viewName={viewName} elevation={5} componentId={componentId} />
 
         {/* CONTENT */}
         <View style={styles.content}>
