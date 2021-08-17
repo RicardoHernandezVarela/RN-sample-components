@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     overflow: 'hidden',
     elevation: 5,
   },

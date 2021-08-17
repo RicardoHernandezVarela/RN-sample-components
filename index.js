@@ -8,6 +8,7 @@ import CustomSwitchView from './screens/CustomSwitchView';
 import ViewPager from './screens/ViewPager';
 import HorizontalGalleryView from './screens/HorizontalGalleryView';
 import IconView from './screens/IconView';
+import ListWithItemMenuView from './screens/ListWithItemMenuView';
 
 /* COMPONENTS REGISTRY */
 Navigation.registerComponent('Home', () => Home);
@@ -27,6 +28,11 @@ Navigation.registerComponent(
 );
 
 Navigation.registerComponent('IconView', () => IconView);
+
+Navigation.registerComponent(
+  'ListWithItemMenuView',
+  () => ListWithItemMenuView,
+);
 
 Navigation.setDefaultOptions({
   statusBar: {

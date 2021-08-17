@@ -17,6 +17,9 @@ const componentsList = [
   {
     viewName: 'Icon',
   },
+  {
+    viewName: 'ListWithItemMenu',
+  },
 ];
 
 export default componentsList;

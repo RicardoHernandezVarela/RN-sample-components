@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
   content: {
     width: width,
-    height: height - 55,
+    height: height,
     backgroundColor: 'white',
     alignItems: 'center',
   },
@@ -74,6 +74,7 @@ const styles = StyleSheet.create({
     width: width,
     height: height - titleContainerHeight,
     backgroundColor: 'white',
+    flex: 1,
   },
   componentsList: {
     flex: 1,
