@@ -6,14 +6,11 @@ import Colors from '../../constants/Colors';
 
 const styles = StyleSheet.create({
   content: {
-    width: 45,
-    height: 45,
     borderRadius: 100,
     borderWidth: 0.5,
     alignSelf: 'center',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'transparent',
     overflow: 'hidden',
     elevation: 5,
   },
@@ -24,8 +21,15 @@ const styles = StyleSheet.create({
   },
 });
 
-function Icon({name, onPress, border, elevation}) {
+/**
+ * @param {string} name Icon name / Image
+**/
+
+function Icon({name, onPress, border, elevation, bgColor, iconSize}) {
   const iconStyles = {
+    width: iconSize || 45,
+    height: iconSize || 45,
+    backgroundColor: bgColor || 'transparent',
     borderColor: border ? Colors.gray : 'transparent',
     elevation: elevation ? 5 : 0,
   };

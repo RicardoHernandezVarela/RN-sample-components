@@ -9,8 +9,8 @@ const styles = StyleSheet.create({
   menu: {
     alignItems: 'center',
     backgroundColor: 'white',
-    borderRadius: 5,
-    elevation: 5,
+    borderRadius: 15,
+    elevation: 7,
     borderWidth: 0.5,
     borderColor: Colors.gray,
     overflow: 'hidden',
